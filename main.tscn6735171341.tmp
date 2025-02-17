@@ -1,0 +1,530 @@
+[gd_scene load_steps=47 format=3 uid="uid://iuvy75pmaqse"]
+
+[ext_resource type="Script" uid="uid://dqsw1co756org" path="res://pixel_grid.gd" id="1_8hy4m"]
+[ext_resource type="Theme" uid="uid://c25g5ekl87tu0" path="res://Theme.tres" id="1_u4o3g"]
+[ext_resource type="Script" uid="uid://73ckms7lgnm0" path="res://menu_bar.gd" id="2_t0wya"]
+[ext_resource type="Script" uid="uid://bco7hqd8322qn" path="res://about_window.gd" id="3_08hus"]
+[ext_resource type="Texture2D" uid="uid://blnx1j0vy648w" path="res://icons/new_icon.png" id="3_fske5"]
+[ext_resource type="Texture2D" uid="uid://brg3wfxesb0jt" path="res://icons/open_icon.png" id="4_btyip"]
+[ext_resource type="Texture2D" uid="uid://8wqkfm7naf1w" path="res://icons/save_icon.png" id="5_phprn"]
+[ext_resource type="Texture2D" uid="uid://cjnoan8svhkfd" path="res://icons/export_icon.png" id="6_82xsv"]
+[ext_resource type="Texture2D" uid="uid://kyj82susf6al" path="res://icons/exit_icon.png" id="6_sagsy"]
+[ext_resource type="Texture2D" uid="uid://bleuvbrmrwkhf" path="res://icons/about_icon.png" id="7_kr71x"]
+[ext_resource type="Texture2D" uid="uid://c5tnc4dqfr7qk" path="res://icons/pencil_icon.png" id="10_6mxs4"]
+[ext_resource type="Script" uid="uid://bd55kja1iumlq" path="res://tools_selector.gd" id="10_am5vk"]
+[ext_resource type="Script" uid="uid://bc23u7v5ek81b" path="res://palette_select.gd" id="10_biaqb"]
+[ext_resource type="Script" uid="uid://c4bwux1bljp7q" path="res://export_window.gd" id="10_getpj"]
+[ext_resource type="Texture2D" uid="uid://bm20wim71cqii" path="res://icons/eraser_icon.png" id="11_uhi7m"]
+[ext_resource type="Material" uid="uid://dq71un87d0d26" path="res://grid_8x8.tres" id="14_ff2q6"]
+[ext_resource type="Script" uid="uid://5vggcxg5vxql" path="res://color_view.gd" id="15_5ymei"]
+[ext_resource type="Script" uid="uid://combxghdigkdv" path="res://color_selection.gd" id="15_6c0g7"]
+[ext_resource type="Script" uid="uid://bu2awams4aoff" path="res://tile_select.gd" id="15_ev5hq"]
+[ext_resource type="Script" uid="uid://c4orey2chcdai" path="res://palette_edit.gd" id="15_u54t3"]
+[ext_resource type="Script" uid="uid://drwpfur38qwbg" path="res://color_controls.gd" id="17_awk26"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h3pux"]
+size = Vector2(128, 512)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ot56"]
+bg_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ck1xg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxcbi"]
+bg_color = Color(0.580392, 0.588235, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvwws"]
+bg_color = Color(0.580392, 0.588235, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qanl3"]
+bg_color = Color(0.741176, 0.745098, 0.741176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ks6uk"]
+bg_color = Color(0.419608, 0.411765, 0.419608, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpiiy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw7gh"]
+bg_color = Color(0.580392, 0.588235, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcaol"]
+bg_color = Color(0.580392, 0.588235, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iffp0"]
+bg_color = Color(0.741176, 0.745098, 0.741176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6o53"]
+bg_color = Color(0.419608, 0.411765, 0.419608, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ew56q"]
+size = Vector2(128, 128)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_kdil3"]
+size = Vector2(128, 512)
+
+[sub_resource type="Gradient" id="Gradient_ooqvl"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sskt7"]
+gradient = SubResource("Gradient_ooqvl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sxd2v"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = SubResource("GradientTexture1D_sskt7")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjfij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr1h0"]
+
+[sub_resource type="Gradient" id="Gradient_82oyw"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ux2xg"]
+gradient = SubResource("Gradient_82oyw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5hym"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = SubResource("GradientTexture1D_ux2xg")
+
+[sub_resource type="Gradient" id="Gradient_nyxpv"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_seeam"]
+gradient = SubResource("Gradient_nyxpv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xd84k"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+texture = SubResource("GradientTexture1D_seeam")
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_u4o3g")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="MarginContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="MainContainer/Menu"]
+layout_mode = 2
+flat = true
+script = ExtResource("2_t0wya")
+
+[node name="File" type="PopupMenu" parent="MainContainer/Menu/MenuBar"]
+unique_name_in_owner = true
+size = Vector2i(108, 147)
+item_count = 6
+item_0/text = "New"
+item_0/icon = ExtResource("3_fske5")
+item_0/id = 0
+item_1/text = "Open"
+item_1/icon = ExtResource("4_btyip")
+item_1/id = 1
+item_2/text = "Save"
+item_2/icon = ExtResource("5_phprn")
+item_2/id = 2
+item_3/text = "Export"
+item_3/icon = ExtResource("6_82xsv")
+item_3/id = 4
+item_4/id = 99
+item_4/disabled = true
+item_4/separator = true
+item_5/text = "Exit"
+item_5/icon = ExtResource("6_sagsy")
+item_5/id = 3
+
+[node name="Settings" type="PopupMenu" parent="MainContainer/Menu/MenuBar"]
+unique_name_in_owner = true
+size = Vector2i(114, 66)
+item_count = 3
+item_0/text = "Scale"
+item_0/id = 99
+item_0/disabled = true
+item_0/separator = true
+item_1/text = "1x Scale"
+item_1/id = 1
+item_2/text = "2x Scale"
+item_2/id = 2
+
+[node name="Help" type="PopupMenu" parent="MainContainer/Menu/MenuBar"]
+unique_name_in_owner = true
+size = Vector2i(96, 24)
+item_count = 1
+item_0/text = "About"
+item_0/icon = ExtResource("7_kr71x")
+item_0/id = 0
+
+[node name="AboutWindow" type="Window" parent="MainContainer/Menu"]
+title = "About"
+initial_position = 2
+size = Vector2i(160, 90)
+visible = false
+transient = true
+exclusive = true
+unresizable = true
+script = ExtResource("3_08hus")
+
+[node name="Margin" type="MarginContainer" parent="MainContainer/Menu/AboutWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MainContainer/Menu/AboutWindow/Margin"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "HexaEngine 0.1.0
+(c) 2025 TaromaruYuki
+
+<3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpenFileWindow" type="FileDialog" parent="MainContainer/Menu"]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(319, 175)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.xeng; HexaEngine Save")
+use_native_dialog = true
+
+[node name="SaveFileWindow" type="FileDialog" parent="MainContainer/Menu"]
+auto_translate_mode = 1
+initial_position = 2
+access = 2
+filters = PackedStringArray("*.xeng; HexaEngine Save")
+use_native_dialog = true
+
+[node name="ExportWindow" type="Window" parent="MainContainer/Menu"]
+title = "Export"
+initial_position = 2
+size = Vector2i(200, 150)
+visible = false
+transient = true
+exclusive = true
+unresizable = true
+script = ExtResource("10_getpj")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/Menu/ExportWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/Menu/ExportWindow/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="DataTypeSelect" type="OptionButton" parent="MainContainer/Menu/ExportWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+
+[node name="DataExportSelect" type="OptionButton" parent="MainContainer/Menu/ExportWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+selected = 0
+
+[node name="ExportButton" type="Button" parent="MainContainer/Menu/ExportWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Export"
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="UserArea" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EditorHalf" type="PanelContainer" parent="MainContainer/UserArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSort" type="HBoxContainer" parent="MainContainer/UserArea/EditorHalf"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/UserArea/EditorHalf/HSort"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="PaletteSelect" type="TextureRect" parent="MainContainer/UserArea/EditorHalf/HSort/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("PlaceholderTexture2D_h3pux")
+stretch_mode = 2
+script = ExtResource("10_biaqb")
+SIZE = Vector2(16, 64)
+SCALE = 8
+
+[node name="ColorRect" type="ColorRect" parent="MainContainer/UserArea/EditorHalf/HSort/ScrollContainer/PaletteSelect"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.3, 0.3, 0.3, 0.501961)
+
+[node name="VSeparator" type="VSeparator" parent="MainContainer/UserArea/EditorHalf/HSort"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="EditorMargin" type="MarginContainer" parent="MainContainer/UserArea/EditorHalf/HSort"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EditorAlignment" type="VBoxContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6ot56")
+
+[node name="ToolsMargin" type="MarginContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Tools" type="HBoxContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/PanelContainer/ToolsMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+script = ExtResource("10_am5vk")
+
+[node name="Pencil" type="Button" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/PanelContainer/ToolsMargin/Tools"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ck1xg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_lxcbi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hvwws")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qanl3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ks6uk")
+toggle_mode = true
+button_pressed = true
+icon = ExtResource("10_6mxs4")
+
+[node name="Eraser" type="Button" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/PanelContainer/ToolsMargin/Tools"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lpiiy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_jw7gh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mcaol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iffp0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o6o53")
+toggle_mode = true
+icon = ExtResource("11_uhi7m")
+
+[node name="CenterContainer" type="CenterContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TransparentBG" type="PanelContainer" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/CenterContainer"]
+layout_mode = 2
+
+[node name="Editor" type="TextureRect" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/CenterContainer/TransparentBG"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 0
+texture = SubResource("PlaceholderTexture2D_ew56q")
+stretch_mode = 2
+script = ExtResource("1_8hy4m")
+SCALE = 16
+
+[node name="Grid" type="ColorRect" parent="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/CenterContainer/TransparentBG/Editor"]
+material = ExtResource("14_ff2q6")
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 1
+
+[node name="VSeparator" type="VSeparator" parent="MainContainer/UserArea"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="ViewHalf" type="PanelContainer" parent="MainContainer/UserArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSort" type="HBoxContainer" parent="MainContainer/UserArea/ViewHalf"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TileSelectScroll" type="ScrollContainer" parent="MainContainer/UserArea/ViewHalf/HSort"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="TileSelect" type="TextureRect" parent="MainContainer/UserArea/ViewHalf/HSort/TileSelectScroll"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_h3pux")
+stretch_mode = 2
+script = ExtResource("15_ev5hq")
+COUNT = Vector2i(16, 64)
+
+[node name="PaletteEditContainer" type="VBoxContainer" parent="MainContainer/UserArea/ViewHalf/HSort"]
+layout_mode = 2
+
+[node name="PaletteEdit" type="ScrollContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PaletteEdit" type="TextureRect" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/PaletteEdit"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_kdil3")
+stretch_mode = 2
+script = ExtResource("15_u54t3")
+SIZE = Vector2i(16, 64)
+SCALE = 8
+
+[node name="ColorViewMargin" type="MarginContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/ColorViewMargin"]
+layout_mode = 2
+stretch_mode = 1
+
+[node name="ColorView" type="ColorRect" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/ColorViewMargin/AspectRatioContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("15_5ymei")
+
+[node name="Controls" type="VBoxContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+script = ExtResource("17_awk26")
+
+[node name="RedControlMargin" type="MarginContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("15_6c0g7")
+
+[node name="ControlHBox" type="HBoxContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Text" type="SpinBox" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin/ControlHBox"]
+layout_mode = 2
+alignment = 1
+update_on_text_changed = true
+
+[node name="Slider" type="HSlider" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin/ControlHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxTexture_sxd2v")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_vjfij")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_rr1h0")
+
+[node name="GreenControlMargin" type="MarginContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("15_6c0g7")
+max_value = 63
+
+[node name="ControlHBox" type="HBoxContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Text" type="SpinBox" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin/ControlHBox"]
+layout_mode = 2
+alignment = 1
+update_on_text_changed = true
+
+[node name="Slider" type="HSlider" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin/ControlHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxTexture_o5hym")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_vjfij")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_rr1h0")
+
+[node name="BlueControlMargin" type="MarginContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+script = ExtResource("15_6c0g7")
+
+[node name="ControlHBox" type="HBoxContainer" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Text" type="SpinBox" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin/ControlHBox"]
+layout_mode = 2
+alignment = 1
+update_on_text_changed = true
+
+[node name="Slider" type="HSlider" parent="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin/ControlHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxTexture_xd84k")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_vjfij")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_rr1h0")
+
+[connection signal="pressed" from="MainContainer/Menu/ExportWindow/MarginContainer/VBoxContainer/ExportButton" to="MainContainer/Menu/ExportWindow" method="_on_export_button_pressed"]
+[connection signal="gui_input" from="MainContainer/UserArea/EditorHalf/HSort/ScrollContainer/PaletteSelect" to="MainContainer/UserArea/EditorHalf/HSort/ScrollContainer/PaletteSelect" method="_on_gui_input"]
+[connection signal="gui_input" from="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/CenterContainer/TransparentBG/Editor" to="MainContainer/UserArea/EditorHalf/HSort/EditorMargin/EditorAlignment/CenterContainer/TransparentBG/Editor" method="_on_gui_input"]
+[connection signal="gui_input" from="MainContainer/UserArea/ViewHalf/HSort/TileSelectScroll/TileSelect" to="MainContainer/UserArea/ViewHalf/HSort/TileSelectScroll/TileSelect" method="_on_gui_input"]
+[connection signal="color_select" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/PaletteEdit/PaletteEdit" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" method="_on_palette_edit_color_select"]
+[connection signal="gui_input" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/PaletteEdit/PaletteEdit" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/PaletteEdit/PaletteEdit" method="_on_gui_input"]
+[connection signal="color_565_updated" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/PaletteEdit/PaletteEdit" method="_on_controls_color_565_updated"]
+[connection signal="color_updated" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/ColorViewMargin/AspectRatioContainer/ColorView" method="_on_controls_color_updated"]
+[connection signal="update_color" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" method="_on_red_update_color"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin/ControlHBox/Text" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin" method="_on_value_changed"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin/ControlHBox/Slider" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/RedControlMargin" method="_on_value_changed"]
+[connection signal="update_color" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" method="_on_green_update_color"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin/ControlHBox/Text" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin" method="_on_value_changed"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin/ControlHBox/Slider" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/GreenControlMargin" method="_on_value_changed"]
+[connection signal="update_color" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls" method="_on_blue_update_color"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin/ControlHBox/Text" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin" method="_on_value_changed"]
+[connection signal="value_changed" from="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin/ControlHBox/Slider" to="MainContainer/UserArea/ViewHalf/HSort/PaletteEditContainer/Controls/BlueControlMargin" method="_on_value_changed"]

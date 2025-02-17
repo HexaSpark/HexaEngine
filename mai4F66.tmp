@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://iuvy75pmaqse"]
+
+[ext_resource type="Theme" uid="uid://cyua0p10284fm" path="res://PixelGridTheme.tres" id="1_6il8a"]
+[ext_resource type="Script" path="res://pixel_grid.gd" id="1_8hy4m"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Pixel Grid" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+theme = ExtResource("1_6il8a")
+script = ExtResource("1_8hy4m")
+VIEW_SCALE = 2

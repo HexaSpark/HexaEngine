@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bflwnyuxahgij"]
+
+[ext_resource type="Shader" path="res://outline.gdshader" id="1_gx168"]
+
+[resource]
+shader = ExtResource("1_gx168")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 0.2
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true

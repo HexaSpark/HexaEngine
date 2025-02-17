@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://iuvy75pmaqse"]
+
+[ext_resource type="Script" path="res://pixel_grid.gd" id="1_8hy4m"]
+[ext_resource type="Theme" uid="uid://c25g5ekl87tu0" path="res://Theme.tres" id="1_u4o3g"]
+[ext_resource type="Script" path="res://menu_bar.gd" id="2_t0wya"]
+[ext_resource type="Script" path="res://about_window.gd" id="3_08hus"]
+[ext_resource type="Texture2D" uid="uid://blnx1j0vy648w" path="res://icons/new_icon.png" id="3_fske5"]
+[ext_resource type="Texture2D" uid="uid://brg3wfxesb0jt" path="res://icons/open_icon.png" id="4_btyip"]
+[ext_resource type="Texture2D" uid="uid://8wqkfm7naf1w" path="res://icons/save_icon.png" id="5_phprn"]
+[ext_resource type="Texture2D" uid="uid://kyj82susf6al" path="res://icons/exit_icon.png" id="6_sagsy"]
+[ext_resource type="Texture2D" uid="uid://bleuvbrmrwkhf" path="res://icons/about_icon.png" id="7_kr71x"]
+[ext_resource type="Script" path="res://palette_select.gd" id="10_biaqb"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dqswu"]
+size = Vector2(128, 128)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_u4o3g")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="MarginContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuBar" parent="MainContainer/Menu"]
+layout_mode = 2
+flat = true
+script = ExtResource("2_t0wya")
+
+[node name="File" type="PopupMenu" parent="MainContainer/Menu/MenuBar"]
+size = Vector2i(114, 120)
+item_count = 5
+item_0/text = "New"
+item_0/icon = ExtResource("3_fske5")
+item_1/text = "Open"
+item_1/icon = ExtResource("4_btyip")
+item_1/id = 1
+item_2/text = "Save"
+item_2/icon = ExtResource("5_phprn")
+item_2/id = 2
+item_3/id = 99
+item_3/disabled = true
+item_3/separator = true
+item_4/text = "Exit"
+item_4/icon = ExtResource("6_sagsy")
+item_4/id = 3
+
+[node name="Help" type="PopupMenu" parent="MainContainer/Menu/MenuBar"]
+item_count = 1
+item_0/text = "About"
+item_0/icon = ExtResource("7_kr71x")
+
+[node name="AboutWindow" type="Window" parent="MainContainer/Menu"]
+title = "About HexaEngine"
+initial_position = 2
+size = Vector2i(320, 180)
+visible = false
+transient = true
+exclusive = true
+unresizable = true
+script = ExtResource("3_08hus")
+
+[node name="Margin" type="MarginContainer" parent="MainContainer/Menu/AboutWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MainContainer/Menu/AboutWindow/Margin"]
+layout_mode = 2
+text = "HexaEngine 0.1.0
+(c) 2025 TaromaruYuki"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OpenFileWindow" type="FileDialog" parent="MainContainer/Menu"]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(640, 360)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.xeng; HexaEngine Save")
+use_native_dialog = true
+
+[node name="SaveFileWindow" type="FileDialog" parent="MainContainer/Menu"]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(640, 360)
+ok_button_text = "Save"
+access = 2
+filters = PackedStringArray("*.xeng; HexaEngine Save")
+use_native_dialog = true
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer"]
+layout_mode = 2
+
+[node name="UserArea" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EditorHalf" type="PanelContainer" parent="MainContainer/UserArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VerticalSort" type="VBoxContainer" parent="MainContainer/UserArea/EditorHalf"]
+layout_mode = 2
+
+[node name="EditorMargin" type="MarginContainer" parent="MainContainer/UserArea/EditorHalf/VerticalSort"]
+layout_mode = 2
+
+[node name="Editor" type="TextureRect" parent="MainContainer/UserArea/EditorHalf/VerticalSort/EditorMargin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = SubResource("PlaceholderTexture2D_dqswu")
+stretch_mode = 2
+script = ExtResource("1_8hy4m")
+SCALE = 16
+
+[node name="PaletteContainer" type="Control" parent="MainContainer/UserArea/EditorHalf/VerticalSort"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/UserArea/EditorHalf/VerticalSort/PaletteContainer"]
+layout_mode = 0
+offset_right = 52.075
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+script = ExtResource("10_biaqb")
+SIZE = Vector2(64, 16)
+SCALE = 6
+
+[connection signal="gui_input" from="MainContainer/UserArea/EditorHalf/VerticalSort/EditorMargin/Editor" to="MainContainer/UserArea/EditorHalf/VerticalSort/EditorMargin/Editor" method="_on_gui_input"]

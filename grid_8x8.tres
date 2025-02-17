@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dq71un87d0d26"]
+
+[ext_resource type="Shader" uid="uid://bq8n71rj0sp3b" path="res://grid.gdshader" id="1_f7s72"]
+
+[resource]
+shader = ExtResource("1_f7s72")
+shader_parameter/columns = 8.0
+shader_parameter/rows = 8.0
+shader_parameter/border_width = 0.02
+shader_parameter/border_color = Color(0.32, 0.32, 0.32, 0.627451)
